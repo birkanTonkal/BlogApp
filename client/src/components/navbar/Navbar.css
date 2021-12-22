@@ -1,0 +1,62 @@
+.navbar-container {
+    height: 320px;
+}
+
+.nav__item {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav__item-list {
+    width: 60%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+.nav__logo {
+    position: relative;
+}
+.nav__logo-cloud {
+    margin-top: 30px;
+    position: absolute;
+    height: 70%;
+    z-index: -1;
+    fill: #e8f2e8;
+}
+.nav__logo-ballon {
+    margin-top: 50px;
+    padding-left: 30px;
+}
+.nav__item-container {
+    width: 80%;
+}
+.nav__item-list {
+    width: 75%;
+    margin-left: 200px;
+    margin-top: 180px;
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+    padding-bottom: 18px;
+    padding-top: 18px;
+}
+.nav__item-list p {
+    font-size: 17px;
+    font-weight: 400;
+    font-family: "Open Sans Condensed", sans-serif;
+}
+.nav__item-list li:hover {
+    color: #71a069;
+    cursor: pointer;
+}
+.nav__title {
+    top: 69px;
+    left: 150px;
+    position: absolute;
+}
+.nav__title h2 {
+    font-family: "Open Sans Condensed", sans-serif;
+    font-size: 74px;
+}
+.nav__title h4 {
+    font-size: 25px;
+}

@@ -1,0 +1,13 @@
+body {
+    background-color: #C5DFC5;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper {
+    max-width: 62%;
+    margin-right: auto;
+    margin-left: auto;
+}
