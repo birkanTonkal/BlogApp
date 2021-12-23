@@ -47,11 +47,8 @@
     padding-bottom: 30px;
 }
 
-textarea {
-    resize: none;
-    outline: none;
+.comments__area textarea {
     border: 2px solid #ccc;
-    font-family: "Open Sans", sans-serif;
     border-radius: 4px;
     width: 94.5%;
     padding: 12px 20px;

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Post.css";
 function Post() {
     return (
@@ -12,7 +13,8 @@ function Post() {
                 </div>
                 <div className="post__content">
                     <div className="post__content-title">
-                        <h3>Outdoor cooking hacks</h3>
+                        <Link className="link" to="/login">
+                            <h3>Outdoor cooking hacks</h3></Link>
                     </div>
                     <div className="post__content-text">
                         <p>

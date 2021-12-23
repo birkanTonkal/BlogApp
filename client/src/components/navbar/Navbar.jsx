@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
@@ -32,7 +33,9 @@ const logoAndTitle = (
             alt=""
         />
         <div className="nav__title">
-            <h2>NOMAD <h4>ON THE</h4> ROAD</h2>
+            <h2>
+                NOMAD <h4>ON THE</h4> ROAD
+            </h2>
         </div>
     </div>
 );
@@ -41,15 +44,25 @@ function navigator(num) {
         <div className="nav__item-container">
             <ul className="nav__item-list">
                 <li className="nav__item-home">
-                    <p>HOME</p>
+                    <Link className="link" to="/">
+                        <p>HOME</p>
+                    </Link>
                 </li>
                 <li className="nav__item-about">
-                    <p>ABOUT</p>
+                    <Link className="link" to="/about">
+                        <p>ABOUT</p>
+                    </Link>
                 </li>
-                <li className="nav__item-contact">
-                    <p>CONTACT</p>
+                <li className="nav__item-write">
+                    <Link className="link" to="/write">
+                        <p>WRITE</p>
+                    </Link>
                 </li>
-                <li className="nav__item-login">{num > 0 && <p>LOGIN</p>}</li>
+                <li className="nav__item-login">
+                    <Link className="link" to="/login">
+                        <p>LOGIN</p>
+                    </Link>
+                </li>
             </ul>
         </div>
     );
