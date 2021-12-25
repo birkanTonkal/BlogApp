@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
-const authRouter = require("./routes/auth");
+const auth = require("./routes/auth");
+const post = require("./routes/posts");
 
 dotenv.config();
 app.use(express.json());
@@ -13,7 +14,8 @@ mongoose
         console.log(e);
     });
 
-app.use("/server/auth", authRouter);
+app.use("/server/auth", auth);
+app.use("/server/post", post);
 
 app.listen("5000", () => {
     console.log("backend running");

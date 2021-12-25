@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+
 const postSchema = new mongoose.Schema(
     {
         username: {
@@ -9,7 +10,6 @@ const postSchema = new mongoose.Schema(
         title: {
             type: String,
             required: true,
-            unique: true,
         },
         content: {
             type: String,
@@ -22,6 +22,7 @@ const postSchema = new mongoose.Schema(
     },
     { timestamps: true }
 );
+
 
 const Post = mongoose.model("Post", postSchema);
 module.exports = Post;

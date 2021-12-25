@@ -13,8 +13,7 @@ function Post() {
                 </div>
                 <div className="post__content">
                     <div className="post__content-title">
-                        <Link className="link" to="/login">
-                            <h3>Outdoor cooking hacks</h3></Link>
+                        <h3>Outdoor cooking hacks</h3>
                     </div>
                     <div className="post__content-text">
                         <p>
