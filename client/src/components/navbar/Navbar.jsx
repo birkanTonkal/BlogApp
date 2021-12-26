@@ -9,7 +9,7 @@ function Navbar() {
                 <div className="nav">
                     <div className="nav__item">
                         {logoAndTitle}
-                        {navigator(4)}
+                        {navigator(true)}
                     </div>
                 </div>
             </div>
@@ -34,12 +34,12 @@ const logoAndTitle = (
         />
         <div className="nav__title">
             <h2>
-                NOMAD <h4>ON THE</h4> ROAD
+                BLOG <h4>FOR</h4> EVERYONE
             </h2>
         </div>
     </div>
 );
-function navigator(num) {
+function navigator(user) {
     return (
         <div className="nav__item-container">
             <ul className="nav__item-list">

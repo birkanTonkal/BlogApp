@@ -8,6 +8,7 @@ router.post("/write", async (req, res) => {
             title: req.body.title,
             content: req.body.content,
             image: req.body.image,
+            viewCount: req.body.viewCount
         });
         const savedPost = await newPost.save();
         res.status(200).json(savedPost);
@@ -37,6 +38,7 @@ router.delete("/:id", async (req, res) => {
 router.get("/:id", async (req, res) => {
     try {
         const post = await Post.findById(req.params.id);
+        post && await Post.updateOne({$inc:{viewCount: 1}})
         res.status(200).json(post);
     } catch (e) {
         res.status(500).json(e);
@@ -75,7 +77,7 @@ router.get("/", async (req, res) => {
     try {
         if (user) {
             //POSTS FROM SPECIFIC USER 
-            posts = await Post.find({user})
+            posts = await Post.find({"username":user})
         }
         else {
             //ALL POSTS

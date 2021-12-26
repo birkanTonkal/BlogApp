@@ -49,13 +49,13 @@
     cursor: pointer;
 }
 .nav__title {
-    top: 69px;
+    top: 85px;
     left: 150px;
     position: absolute;
 }
 .nav__title h2 {
     font-family: "Open Sans Condensed", sans-serif;
-    font-size: 74px;
+    font-size: 62px;
 }
 .nav__title h4 {
     font-size: 25px;

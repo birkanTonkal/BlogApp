@@ -4,7 +4,7 @@
     height: 800px;
     align-items: center;
     font-family:"Open Sans", sans-serif;
-
+    background-color: #fff;
 }
 .login__form label {
     width: 40%;
@@ -28,11 +28,20 @@
     margin-top: 40px;
     font-family:"Open Sans", sans-serif;
     font-size: 22px;
-    color: #C5DFC5;
+    color: #fff;
     width: 15%;
     height: 5%;
     border: 2px solid #383838;
     border-radius: 5px;
     background-color: #383838;
     cursor: pointer;
+}
+.register__link {
+    position: absolute;
+    font-size: 20px;
+    top: 88%;
+    right: 43%;
+}
+.register__link:hover {
+    text-decoration: underline;
 }

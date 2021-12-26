@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Post.css";
-function Post() {
+function Post({ post }) {
     return (
         <div className="post-container">
             <div className="post">
@@ -12,21 +12,25 @@ function Post() {
                     />
                 </div>
                 <div className="post__content">
-                    <div className="post__content-title">
-                        <h3>Outdoor cooking hacks</h3>
-                    </div>
-                    <div className="post__content-text">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Eos nisi quod et. Voluptatem odit inventore
-                            deserunt amet, nemo vero earum delectus tempora
-                            porro obcaecati minus sed, tempore animi excepturi
-                            aliquam?
-                        </p>
-                    </div>
+                    <Link className="link" to={`/?user=${post.username}`}>
+                        <div className="post__content-author">
+                            <span>Author:{post.username}</span>
+                        </div>
+                    </Link>
+                    <Link className="link" to={`/post/${post._id}`}>
+                        <div className="post__content-title">
+                            <h3>{post.title}</h3>
+                        </div>
+                    </Link>
+                    <Link className="link" to={`/post/${post._id}`}>
+                        <div className="post__content-text">
+                            <p>{post.content}</p>
+                        </div>
+                    </Link>
+
                     <div className="post__content-stats">
                         <div className="post__content-stats-views">
-                            <p>1478 viewes</p>
+                            <p>Views:{post.viewCount}</p>
                             <p>0 comments</p>
                         </div>
                         <div className="post__content-stats-likes">

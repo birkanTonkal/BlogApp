@@ -14,7 +14,19 @@ router.post("/register", async (req, res) => {
         const user = await newUser.save();
         res.status(200).json(user);
     } catch (e) {
-        res.status(500).json(e);
+        if (
+            req.body.username === "" ||
+            req.body.email === "" ||
+            req.body.password === ""
+        ) {
+            res.status(404).json("You cant sign without information, I am sorry :(");
+        } else if (
+            User.findOne(req.body.username || User.findOne(req.body.email))
+        ) {
+            res.status(401).json("This email or username already used.");
+        } else {
+            res.status(500).json(e);
+        }
     }
 });
 
@@ -25,8 +37,9 @@ router.post("/login", async (req, res) => {
         !user && res.status(400).json("Username or password is not correct");
 
         const password = await bcrypt.compare(req.body.password, user.password);
-        !password && res.status(400).json("Username or password is not correct");
-        
+        !password &&
+            res.status(400).json("Username or password is not correct");
+
         res.status(200).json(user);
     } catch (e) {
         res.status(500).json(e);

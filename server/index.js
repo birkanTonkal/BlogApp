@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const auth = require("./routes/auth");
 const post = require("./routes/posts");
+const cors = require("cors");
 
 dotenv.config();
 app.use(express.json());
@@ -13,7 +14,7 @@ mongoose
     .catch((e) => {
         console.log(e);
     });
-
+app.use(cors());
 app.use("/server/auth", auth);
 app.use("/server/post", post);
 
