@@ -35,10 +35,11 @@ router.delete("/:id", async (req, res) => {
     }
 });
 
+//SINGLE POST FOR SINGLE PAGE
 router.get("/:id", async (req, res) => {
     try {
         const post = await Post.findById(req.params.id);
-        post && await Post.updateOne({$inc:{viewCount: 1}})
+        post && await Post.findByIdAndUpdate({_id: req.params.id}, {$inc:{viewCount: 1}});
         res.status(200).json(post);
     } catch (e) {
         res.status(500).json(e);
