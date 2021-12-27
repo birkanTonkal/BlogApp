@@ -7,7 +7,7 @@ function Post({ post }) {
             <div className="post">
                 <div className="post__img">
                     <img
-                        src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MXx8d29yayUyMGZyb20lMjBob21lfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+                        src={"http://localhost:5000/images/"+ post.image}
                         alt=""
                     />
                 </div>

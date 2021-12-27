@@ -2,12 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import { ContextProvider } from "./helpers/Context";
+import { AuthContextProvider } from "../src/helpers/Context/AuthContext";
 
-const userContext = createContext()
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <AuthContextProvider>
+            <App />
+        </AuthContextProvider>
     </React.StrictMode>,
     document.getElementById("root")
 );

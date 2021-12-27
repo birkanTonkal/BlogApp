@@ -14,6 +14,7 @@ p {
 .link {
     text-decoration: none;
     color: inherit;
+    transition: 1s ease;
 }
 
 textarea {
