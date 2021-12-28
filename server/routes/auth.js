@@ -14,19 +14,12 @@ router.post("/register", async (req, res) => {
         const user = await newUser.save();
         res.status(200).json(user);
     } catch (e) {
-        if (
-            req.body.username === "" ||
-            req.body.email === "" ||
-            req.body.password === ""
-        ) {
-            res.status(404).json("You cant sign without information, I am sorry :(");
-        } else if (
-            User.findOne(req.body.username || User.findOne(req.body.email))
-        ) {
-            res.status(401).json("This email or username already used.");
-        } else {
-            res.status(500).json(e);
-        }
+        let check = User.findOne(
+            req.body.username || User.findOne(req.body.email)
+        );
+        check
+            ? res.status(401).json("This email or username already used.")
+            : res.status(500).json(e);
     }
 });
 
@@ -45,4 +38,5 @@ router.post("/login", async (req, res) => {
         res.status(500).json(e);
     }
 });
+
 module.exports = router;

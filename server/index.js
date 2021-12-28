@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const auth = require("./routes/auth");
 const post = require("./routes/posts");
 const upload = require("./routes/upload");
+const user = require('./routes/user')
 const path = require("path")
 const cors = require("cors");
 
@@ -21,6 +22,7 @@ mongoose
 app.use("/images", express.static(path.join(__dirname, "/images")));
 app.use(cors());
 app.use("/server/auth", auth);
+app.use("/server/user", user);
 app.use("/server/post", post);
 app.use("/server/upload", upload);
 
