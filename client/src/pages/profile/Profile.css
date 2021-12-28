@@ -1,0 +1,94 @@
+.user__info {
+    display: none;
+    flex-direction: column;
+    min-height: 800px;
+    padding-top: 80px;
+    align-items: center;
+    position: relative;
+}
+.user__profile{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-top: 110px;
+    align-items: center;
+}
+
+
+.user__profile span, .user__info span {
+    font-weight: bolder;
+}
+.user__profile div, .user__info div {
+    display: inline-block;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid #565656;
+    font-size: 19px;
+    margin-top: 20px;
+    width: 70%;
+}
+.user__info input {
+    outline: none;
+    border: none;
+    font-size: 18px;
+    width: 98%;
+}
+
+.user__img {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    justify-content: center;
+}
+.user__img span {
+    font-size: 20px;
+    padding-bottom: 10px;  
+}
+.user__img i {
+    font-size: 70px;
+    color: #565656;
+    margin-right: 30px;
+}
+.user__profile--img{
+    position: absolute;
+    width: 100px;
+    height: 120px;
+    left: 50;
+    top: 0;
+
+}
+.user__img img {
+    height: 100%;
+    object-fit: contain;
+}
+.user__profile--img img  {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.user__profile--name, .user__name {
+    display: inline-block;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid #565656;
+    font-size: 19px;
+}
+.user__profile--button, .user__button {
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    
+}
+.user__profile--button button, .user__button button {
+    padding-left: 2px;
+    width: 80px;
+    display: inline-block;
+    color: #C5DFC5;
+}
+#imgEdit {
+    display: none;
+}
