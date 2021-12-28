@@ -17,11 +17,11 @@
     max-width: 80%;
     margin-top: 30px;
 }
-.singlePost__content-img img {
+.singlePost__content--img img {
     height: 100%;
     width: 100%;
 }
-.singlePost__content-text{
+.singlePost__content--text{
     margin-top: 35px;
     margin-bottom: 35px;
     color: #383838;
@@ -30,12 +30,14 @@
     word-wrap: break-word;
     white-space: pre-wrap;
 }
-.comments {
+.comments__container {
     background-color: #fff;
     margin: auto;
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
+    justify-content: space-between;
+    min-height: 200px;
 }
 .comments__title {
     width: 80%;
@@ -45,6 +47,13 @@
     border-bottom: 1px solid #383838;
     font-family: "Open Sans Condensed", sans-serif;
     font-size: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.comments__title button {
+    font-size: 22px;
+    color: #C5DFC5;
+    
 }
 .comments__area {
     width: 80%;
@@ -95,6 +104,7 @@
 }
 .comments__area textarea {
     border: 2px solid #ccc;
+    font-family:"Open Sans", sans-serif;
     border-radius: 4px;
     width: 94.5%;
     padding: 12px 20px;
@@ -119,4 +129,52 @@
     text-align: center;
     cursor: pointer;
     margin-bottom: 50px;
+}
+.comments__button {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.comments__button button{
+    display: flex;
+    justify-content: center;
+    font-family:"Open Sans", sans-serif;
+    font-size: 22px;
+    color: #C5DFC5;
+    border: 2px solid #383838;
+    border-radius: 5px;
+    background-color: #383838;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.comments {
+    font-family:"Open Sans", sans-serif;
+    height: 150px;
+    width: 80%;
+    margin: auto;
+    border: 1px #383838 solid;
+    background-color: #c5dfc5;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+.comments__user {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #383838;
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 10px;
+}
+.comments__content {
+    height: 100px;
+    
+}
+
+.comments__content p{
+    font-size: 14px;
+    
 }

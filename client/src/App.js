@@ -7,8 +7,12 @@ import SinglePost from "./pages/single-post/SinglePost";
 import Login from "./pages/login/Login";
 import Write from "./pages/write/Write";
 import Register from "./pages/register/Register";
+import Profile from "./pages/profile/Profile";
+import Statistic from "./pages/stats/Statistic";
 import { AuthContext } from "./helpers/Context/AuthContext";
 import {useContext} from "react";
+
+
 
 
 function App() {
@@ -22,6 +26,8 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/write" element={account ? <Write /> : <Login />} />
+                <Route path="/profile" element = {account ? <Profile /> : <Login />} />
+                <Route path="/stats" element = {account ? <Statistic /> : null} />
             </Routes>
         </Router>
     );
