@@ -4,7 +4,8 @@
     height: 800px;
     align-items: center;
     font-family:"Open Sans", sans-serif;
-    background-color: #fff;
+    position: relative;
+
 }
 .login__form label {
     width: 40%;
@@ -17,11 +18,11 @@
 .login__form input {
     width: 40%;
     height: 5%;
-    border: 2px solid #383838;
-    border-radius: 5px;
+    border: 2px solid #565656;
     background-color: transparent;
     font-family:"Open Sans", sans-serif;
     font-size: 20px;
+    background-color: #fff;
 
 }
 .login__form button {
@@ -39,9 +40,16 @@
 .register__link {
     position: absolute;
     font-size: 20px;
-    top: 88%;
-    right: 43%;
+    top: 67%;
+    right: 38%;
 }
 .register__link:hover {
     text-decoration: underline;
+}
+.error {
+    font-size: 20px;
+    color: white;
+    background-color: red;
+    padding: 10px;
+    font-weight: bolder;
 }
