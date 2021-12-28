@@ -37,51 +37,11 @@ const logoAndTitle = (
         />
         <div className="nav__title">
             <h2>
-                BLOG  <pre>FOR</pre> EVERYONE
+                BLOG <pre>FOR</pre> EVERYONE
             </h2>
         </div>
     </div>
 );
-function loginChanges(account, dispatch) {
-    const showDropDown = () => {
-        let dropDown = document.getElementsByClassName("nav__item--dropdown")[0]
-            .style;
-        dropDown.display === ""
-            ? (dropDown.display = "none")
-            : (dropDown.display = "");
-    };
-    let logoutHandler = () => {
-        dispatch({ type: "LOGOUT" });
-    };
-    if (account !== null) {
-        return (
-            <div className="nav__item--login-container">
-                <div className="nav__item--loginImg" onClick={showDropDown}>
-                    <img
-                        src={"http://localhost:5000/images/" + account.image}
-                        alt=""
-                        className="nav__item--loginPicture"
-                    />
-                </div>
-                <div className="nav__item--dropdown">
-                    <ul className="nav__item--dropdownMenu">
-                        <li>Profile</li>
-                        <li>Statistics</li>
-                        <li onClick={logoutHandler}>Logout</li>
-                    </ul>
-                </div>
-            </div>
-        );
-    } else {
-        return (
-            <Link className="link" to="/login">
-                <div className="nav__item--login-container">
-                    <p>LOGIN</p>
-                </div>
-            </Link>
-        );
-    }
-}
 function navMenu(account, dispatch) {
     return (
         <div className="nav__item--container">
@@ -102,13 +62,64 @@ function navMenu(account, dispatch) {
                     </Link>
                 </li>
                 <li className="nav__item--login">
-                    
-                        {loginChanges(account, dispatch)}
-                   
+                    {loginChanges(account, dispatch)}
                 </li>
             </ul>
         </div>
     );
+}
+
+function loginChanges(account, dispatch) {
+    const showDropDown = () => {
+        let dropDown = document.getElementsByClassName("nav__item--dropdown")[0]
+            .style;
+
+        if (dropDown.display === "block") {
+            dropDown.display = "none";
+        } else {
+            dropDown.display = "block";
+        }
+    };
+    let logoutHandler = () => {
+        dispatch({ type: "LOGOUT" });
+    };
+    if (account !== null) {
+        return (
+            <div className="nav__item--login-container">
+                <div className="nav__item--loginImg" onClick={showDropDown}>
+                    <img
+                        src={"http://localhost:5000/images/" + account.image}
+                        alt=""
+                        className="nav__item--loginPicture"
+                    />
+                </div>
+                <div className="nav__item--dropdown">
+                    <ul className="nav__item--dropdownMenu">
+                        <li>
+                            <Link className="link" to="/profile">
+                                <p>Profile</p>
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link className="link" to="/stats">
+                                <p>Statistics</p>
+                            </Link>
+                        </li>
+                        <li onClick={logoutHandler}><p>Logout</p></li>
+                    </ul>
+                </div>
+            </div>
+        );
+    } else {
+        return (
+            <Link className="link" to="/login">
+                <div className="nav__item--login-container">
+                    <p>LOGIN</p>
+                </div>
+            </Link>
+        );
+    }
 }
 
 export default Navbar;

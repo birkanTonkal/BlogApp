@@ -54,6 +54,9 @@
     color: #71a069;
     cursor: pointer;
 }
+.nav__item--loginImg img {
+    border-radius: 50%;
+}
 .nav__title {
     top: 85px;
     left: 150px;
@@ -71,23 +74,33 @@
     height: 70px;
     cursor: pointer;
 }
+.nav__item--login-container {
+    position: relative;
+}
+.nav__item--dropdown{
+    display: none;
+    position: absolute;
+    right: 150%;
+}
 .nav__item--dropdownMenu {
     position: absolute;
+    
 }
-.nav__item--dropdownMenu li {
+.nav__item--dropdownMenu p {
+    font-family: "Open Sans", sans-serif;
+    width: 150px;
+    display: block;
+}
+.nav__item--dropdownMenu li{
     width: 150px;
     height: 50px;
     font-family: "Open Sans", sans-serif;
-    background-color: #98A669;
+    background-color: #585858;
     color: #fff;
     
 }
-.nav__item--dropdownMenu li:first-child {
-   border-top: 2px solid #98A669;
-}
-.nav__item--dropdownMenu li:hover {
+
+.nav__item--dropdownMenu li:hover, .nav__item--dropdownMenu .link p:hover {
     cursor: pointer;
-    font-size: 18px;
-    transition: 1s ease;
     background-color: #98A669;
 }
