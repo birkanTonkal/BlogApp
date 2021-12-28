@@ -22,7 +22,13 @@ const postSchema = new mongoose.Schema(
         viewCount: {
             type:Number,
             default: 0
-        }
+        },
+        comments: [{
+            comment:String,
+            username:String,
+            date:Date
+        }]
+
     },
     { timestamps: true }
 );
