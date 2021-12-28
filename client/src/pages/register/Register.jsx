@@ -5,38 +5,52 @@ import {  useState, useRef } from "react";
 import axios from "axios";
 
 function Register() {
-    const [message, setMessage] = useState("");
+    const [error, setError] = useState("");
     let email = useRef();
     let username = useRef();
     let password = useRef();
 
     const submitHandler = async (e) => {
         e.preventDefault();
+        let name = username.current.value;
+        let mail = email.current.value;
+        let parole = password.current.value;
         try {
             const register = await axios.post("/auth/register", {
-                username: username.current.value,
-                email: email.current.value,
-                password: password.current.value,
+                username: name,
+                email: mail,
+                password: parole 
             });
             register.data && window.location.replace("/login");
-        } catch (e) {
-            setMessage(e.response.data);
+        } 
+        catch (e) {
+            if(name === "" || mail === "" || parole === "") {
+                setError("You can't sign without information :(")
+            }
+            else if (e.response.status === 401) {
+                setError(e.response.data);
+            }
+            else {
+                setError("WE ARE IN MAINTENANCE");
+            }
+            
         }
     };
     return (
         <div className="register-container">
             <div className="wrapper">
-                {message && <h4 className="error__message">{message}</h4>}
+                
                 <form className="register__form" onSubmit={submitHandler}>
-                    <div className="register__form-email">
+                {error && <p className="error">&#9888;&nbsp;{error}</p>}
+                    <div className="register__form--email">
                         <label>Email</label>
                         <input
-                            type="text"
-                            placeholder="Please enter your mail..."
+                            type="email"
+                            placeholder="me@example.com" required
                             ref={email}
                         />
                     </div>
-                    <div className="register__form-username">
+                    <div className="register__form--username">
                         <label>Username</label>
                         <input
                             type="text"
@@ -44,7 +58,7 @@ function Register() {
                             ref={username}
                         />
                     </div>
-                    <div className="register__form-password">
+                    <div className="register__form--password">
                         <label>Password</label>
                         <input
                             type="password"
@@ -52,8 +66,8 @@ function Register() {
                             ref={password}
                         />
                     </div>
-                    <div className="register__form-buttons">
-                        <div className="register__form-button">
+                    <div className="register__form--buttons">
+                        <div className="register__form--button">
                             <button>Register</button>
                         </div>
                         <Link className="link" to={"/login"}>
