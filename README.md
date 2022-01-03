@@ -7,7 +7,7 @@
 4. Image upload
 5. Some statistics on chart
 6. Hashing
-# Used Technologies
+# Built With
 - Node.js
 - Express.js
 - React.js
