@@ -1,5 +1,5 @@
 # BlogApp
- A full stack blog sharing website
+ A full stack blog sharing website.
 # Some Features
  1. CRUD operations 
  2. User authentication
